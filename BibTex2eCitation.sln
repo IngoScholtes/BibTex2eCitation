@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibTex2eCitation", "BibTex2eCitation\BibTex2eCitation.csproj", "{564F09E9-986C-47EF-8B3A-56568F408DED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NETRef", "NETRef\NETRef.csproj", "{490E3EA6-25C5-45E6-9297-674F834C35B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{564F09E9-986C-47EF-8B3A-56568F408DED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{564F09E9-986C-47EF-8B3A-56568F408DED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{564F09E9-986C-47EF-8B3A-56568F408DED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{564F09E9-986C-47EF-8B3A-56568F408DED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{490E3EA6-25C5-45E6-9297-674F834C35B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{490E3EA6-25C5-45E6-9297-674F834C35B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{490E3EA6-25C5-45E6-9297-674F834C35B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{490E3EA6-25C5-45E6-9297-674F834C35B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

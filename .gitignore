@@ -1,0 +1,8 @@
+*.cache
+*.user
+*.suo
+*.ncb
+*.dll
+*/bin/
+*/obj/
+TestResults/
