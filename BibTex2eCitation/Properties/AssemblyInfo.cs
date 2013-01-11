@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("BibTex2eCitation")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("eCitationEditor")]
+[assembly: AssemblyDescription("A simple editor for ETH eCitation CSV Files, with an option to import BibTeX")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("BibTex2eCitation")]
+[assembly: AssemblyCompany("Chair of Systems Design, ETH Zurich")]
+[assembly: AssemblyProduct("eCitationEditor")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

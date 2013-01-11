@@ -40,6 +40,7 @@ namespace BibTex2eCitation
 
         private void importBibTeXToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            openFileDialog1.Filter = "BibTeX Files|*.bib";
             if (openFileDialog1.ShowDialog() != DialogResult.OK)
                 return;
 
@@ -131,6 +132,9 @@ namespace BibTex2eCitation
             }
 
             string text = sb.ToString();
+
+            saveFileDialog1.Filter = "CSV Files|*.csv";
+
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 System.IO.File.WriteAllText(saveFileDialog1.FileName, text, Encoding.Unicode);
         }
@@ -160,6 +164,7 @@ namespace BibTex2eCitation
 
         private void openECitationCSVToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            openFileDialog1.Filter = "CSV Files|*.csv";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string[] data = System.IO.File.ReadAllLines(openFileDialog1.FileName);
@@ -217,7 +222,7 @@ namespace BibTex2eCitation
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(" eCitation Editor Version " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version + " \n Developed at the Chair of Systems Design, 2013\n http://www.sg.ethz.ch");
+            MessageBox.Show(" eCitation Editor Version " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version + " \n Developed at the Chair of Systems Design, 2013\n http://www.sg.ethz.ch", "About eCitation Editor");
         }
     }
 }

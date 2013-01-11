@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibTex2eCitation", "BibTex2eCitation\BibTex2eCitation.csproj", "{564F09E9-986C-47EF-8B3A-56568F408DED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eCitationEditor", "BibTex2eCitation\eCitationEditor.csproj", "{564F09E9-986C-47EF-8B3A-56568F408DED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

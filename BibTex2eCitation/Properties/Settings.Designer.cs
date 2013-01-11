@@ -25,7 +25,7 @@ namespace BibTex2eCitation.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("03682")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string DefaultOrgCode {
             get {
                 return ((string)(this["DefaultOrgCode"]));

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -114,7 +114,8 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(275, 22);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
@@ -126,14 +127,16 @@
             // openECitationCSVToolStripMenuItem
             // 
             this.openECitationCSVToolStripMenuItem.Name = "openECitationCSVToolStripMenuItem";
-            this.openECitationCSVToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.openECitationCSVToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openECitationCSVToolStripMenuItem.Size = new System.Drawing.Size(275, 22);
             this.openECitationCSVToolStripMenuItem.Text = "Open eCitation CSV";
             this.openECitationCSVToolStripMenuItem.Click += new System.EventHandler(this.openECitationCSVToolStripMenuItem_Click);
             // 
             // exportECitationCSVToolStripMenuItem
             // 
             this.exportECitationCSVToolStripMenuItem.Name = "exportECitationCSVToolStripMenuItem";
-            this.exportECitationCSVToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.exportECitationCSVToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.exportECitationCSVToolStripMenuItem.Size = new System.Drawing.Size(275, 22);
             this.exportECitationCSVToolStripMenuItem.Text = "Save as eCitation CSV";
             this.exportECitationCSVToolStripMenuItem.Click += new System.EventHandler(this.exportECitationCSVToolStripMenuItem_Click);
             // 
@@ -152,7 +155,8 @@
             // importBibTexFromClipBoardToolStripMenuItem
             // 
             this.importBibTexFromClipBoardToolStripMenuItem.Name = "importBibTexFromClipBoardToolStripMenuItem";
-            this.importBibTexFromClipBoardToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.importBibTexFromClipBoardToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
+            this.importBibTexFromClipBoardToolStripMenuItem.Size = new System.Drawing.Size(275, 22);
             this.importBibTexFromClipBoardToolStripMenuItem.Text = "Import BibTex From ClipBoard";
             this.importBibTexFromClipBoardToolStripMenuItem.Click += new System.EventHandler(this.importBibTexFromClipBoardToolStripMenuItem_Click);
             // 
@@ -164,7 +168,8 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(275, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -179,6 +184,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
@@ -227,11 +233,10 @@
             // 
             // TITLE
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TITLE.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TITLE.DefaultCellStyle = dataGridViewCellStyle3;
             this.TITLE.HeaderText = "TITLE";
             this.TITLE.Name = "TITLE";
-            this.TITLE.ReadOnly = true;
             // 
             // AUTHOR
             // 
