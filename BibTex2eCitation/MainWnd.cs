@@ -59,10 +59,20 @@ namespace BibTex2eCitation
             string author = entry.getField("author");
             string editor = entry.getField("editor");
 
+            string[] authors = author.Split(new string[] { " and " }, StringSplitOptions.RemoveEmptyEntries);
+            string new_author = "";
+            foreach (string a in authors)
+            {
+                if (a.Length > 0 && new_author != "")
+                    new_author = new_author + ";" + a.Trim();
+                else if (a.Length > 0)
+                    new_author = a.Trim();
+            }
+
             if (editor ==null)
-                editor = author;
-            if (author == null)
-                author = editor;
+                editor = new_author;
+            if (new_author == "")
+                new_author = editor;            
 
             string booktitle = entry.getField("booktitle");
             string edition = entry.getField("edition");
@@ -106,7 +116,7 @@ namespace BibTex2eCitation
                 publicationtype = "Conference Contributions";
             string language = "English";
 
-            dataGridView1.Rows.Add(new string[] { title, author, publicationdate, editor, publicationtype, "", orgcode, subtitle, booktitle, edition, "", "", isbn, journalorseriestitle, volume, issue, startpage, endpage, issn, publisher, "", "", abstract_txt, doi, fulltexturl, "", "", "", notes, "", language });
+            dataGridView1.Rows.Add(new string[] { title, new_author, publicationdate, editor, publicationtype, "", orgcode, subtitle, booktitle, edition, "", "", isbn, journalorseriestitle, volume, issue, startpage, endpage, issn, publisher, "", "", abstract_txt, doi, fulltexturl, "", "", "", notes, "", language });
         }
 
         private void exportECitationCSVToolStripMenuItem_Click(object sender, EventArgs e)
