@@ -143,7 +143,7 @@ namespace BibTex2eCitation
 
             string text = sb.ToString();
 
-            saveFileDialog1.Filter = "CSV Files|*.csv";
+            saveFileDialog1.Filter = "CSV Files|*.txt";
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 System.IO.File.WriteAllText(saveFileDialog1.FileName, text, Encoding.Unicode);
@@ -174,7 +174,7 @@ namespace BibTex2eCitation
 
         private void openECitationCSVToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = "CSV Files|*.csv";
+            openFileDialog1.Filter = "CSV Files|*.txt";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string[] data = System.IO.File.ReadAllLines(openFileDialog1.FileName);
