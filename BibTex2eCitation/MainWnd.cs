@@ -245,7 +245,7 @@ namespace BibTex2eCitation
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(" eCitation Editor Version " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version + " \n Developed at the Chair of Systems Design, 2013\n http://www.sg.ethz.ch", "About eCitation Editor");
+            MessageBox.Show(" eCitation Editor Version " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version + " \n Developed at the Chair of Systems Design, 2013-2014\n http://www.sg.ethz.ch", "About eCitation Editor");
         }
     }
 }
