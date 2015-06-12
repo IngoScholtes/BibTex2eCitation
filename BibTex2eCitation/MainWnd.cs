@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Developed by Ingo Scholtes
+ * (c) Copyright ETH Zürich, Chair of Systems Design, 2014-2015
+ * */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
