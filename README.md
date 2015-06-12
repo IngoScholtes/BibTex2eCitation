@@ -8,3 +8,5 @@ In order to simplify the process of updating the current publication list in the
 **Disclaimer:** *While you are free to use it, please note that we cannot guarantee its correct functioning and that we are not liable for any loss or damage resulting from its use.*
 
 The software is written in .NET, which means it runs on Windows, MacOS X and various Linux distributions. For MacOS X and Linux you will need to install the Mono Runtime (version 2.10 and above). For Windows operating systems, make sure you have installed .NET Framework 3.5 (integrated in Windows 7 and 8).
+
+(c) Copyright ETH Zurich, Chair of Systems Design, 2014-2015
