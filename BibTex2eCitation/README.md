@@ -9,10 +9,4 @@ In order to simplify the process of updating the current publication list in the
 
 The software is written in .NET, which means it runs on Windows, MacOS X and various Linux distributions. For MacOS X and Linux you will need to install the Mono Runtime (version 2.10 and above). For Windows operating systems, make sure you have installed .NET Framework 3.5 (integrated in Windows 7 and 8).
 
-## Contributors
-
-Ingo Scholtes (project lead, development)
-
-## Copyright
-
-(c) Copyright ETH Zürich, Chair of Systems Design, 2014-2015
+(c) Copyright ETH Zurich, Chair of Systems Design, 2014-2015
