@@ -49,16 +49,28 @@ namespace BibTex2eCitation
             if (openFileDialog1.ShowDialog() != DialogResult.OK)
                 return;
 
-            BibtexParser parser = new BibtexParser(new StreamReader(openFileDialog1.FileName));
-            var result = parser.Parse();
-            db = result.Database;
+            BibtexParser parser = new BibtexParser(new StreamReader(new FileStream(openFileDialog1.FileName, FileMode.Open)));
+            try
+            {
+                var result = parser.Parse();
+                
 
-            foreach (var entry in db.getEntries())
-                AddBibTeXEntry(entry);
+                foreach (var entry in result.Database.getEntries())
+                    AddBibTeXEntry(entry);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("The following error occurred when parsing the BibTeX file: {0}", ex.Message));
+            }
         }
 
         private string TrimEntry(string entry)
         {
+            if (entry == null)
+            {
+                Console.WriteLine("Warning: Trimming null entry");
+                return null;
+            }
             string trimmed = entry.TrimStart('{', ' ');
             trimmed = trimmed.TrimEnd('}', ' ');
             return trimmed;
@@ -73,9 +85,19 @@ namespace BibTex2eCitation
 
             title = TrimEntry(title);
             author = TrimEntry(author);
+            editor = TrimEntry(editor);
 
-            if (editor != null)
-                editor = TrimEntry(editor);
+            if (author == null)
+            {
+                Console.WriteLine("Warning: empty author field in entry {0}", entry.getId());
+                author = "";
+            }
+
+            if (editor == null)
+            {
+                Console.WriteLine("Warning: empty editor field in entry {0}", entry.getId());
+                editor = "";
+            }                
 
             string[] authors = author.Split(new string[] { " and ", "," }, StringSplitOptions.RemoveEmptyEntries);
             string new_author = "";
@@ -87,7 +109,7 @@ namespace BibTex2eCitation
                     new_author = TrimEntry(a);
             }
 
-            if (editor == null)
+            if (editor == "")
                 editor = new_author;
             if (new_author == "")
                 new_author = editor;
@@ -153,7 +175,7 @@ namespace BibTex2eCitation
                 foreach (var cell in (row as DataGridViewRow).Cells)
                 {
                     if((cell as DataGridViewCell).Value!= null)
-                        sb.Append((cell as DataGridViewCell).Value.ToString());
+                        sb.Append(string.Format("\"{0}\"", (cell as DataGridViewCell).Value.ToString().Replace('"', ' ').Replace('\t', ' ').Replace('\n', ' ')));
                     sb.Append("\t");
                 }
                 sb.AppendLine();
@@ -193,14 +215,36 @@ namespace BibTex2eCitation
         private void openECitationCSVToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "CSV Files|*.txt;*.csv";
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                string[] data = System.IO.File.ReadAllLines(openFileDialog1.FileName);
-                foreach (string row in data)
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    if(row != data[0] && row.Length>0)
-                        dataGridView1.Rows.Add(row.Split(','));
-                }                
+                    string[] data = System.IO.File.ReadAllLines(openFileDialog1.FileName);
+
+                    char splitChar = '\t';
+                    char[] splitChars = { ' ', '\t', ';', ',' };
+                    foreach (char c in splitChars)
+                    {
+                        if (data[0].Split(c)[0] == "TITLE")
+                            splitChar = c;
+                    }
+
+                    var parser = new Microsoft.VisualBasic.FileIO.TextFieldParser(openFileDialog1.FileName);
+                    parser.TextFieldType = Microsoft.VisualBasic.FileIO.FieldType.Delimited;
+                    parser.SetDelimiters(new string[] { splitChar.ToString() });
+                    int i = 0; 
+                    while (!parser.EndOfData)
+                    {
+                        string[] fields = parser.ReadFields();
+                        if (i>0)
+                            dataGridView1.Rows.Add(fields);
+                        i++;
+                    }                       
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error reading file: {0}", ex.Message));
             }
         }
 
