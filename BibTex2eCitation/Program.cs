@@ -19,7 +19,6 @@ namespace BibTex2eCitation
         [STAThread]
         static void Main()
         {
-            Console.WriteLine("TEST");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainWnd());
