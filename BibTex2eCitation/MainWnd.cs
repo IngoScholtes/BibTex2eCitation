@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Developed by Ingo Scholtes
+ * (c) Copyright ETH Zürich, Chair of Systems Design, 2014-2015
+ * */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -52,6 +57,13 @@ namespace BibTex2eCitation
                 AddBibTeXEntry(entry);
         }
 
+        private string TrimEntry(string entry)
+        {
+            string trimmed = entry.TrimStart('{', ' ');
+            trimmed = trimmed.TrimEnd('}', ' ');
+            return trimmed;
+        }
+
         private void AddBibTeXEntry(BibtexEntry entry)
         {
             string title = entry.getField("title");
@@ -59,20 +71,26 @@ namespace BibTex2eCitation
             string author = entry.getField("author");
             string editor = entry.getField("editor");
 
-            string[] authors = author.Split(new string[] { " and " }, StringSplitOptions.RemoveEmptyEntries);
+            title = TrimEntry(title);
+            author = TrimEntry(author);
+
+            if (editor != null)
+                editor = TrimEntry(editor);
+
+            string[] authors = author.Split(new string[] { " and ", "," }, StringSplitOptions.RemoveEmptyEntries);
             string new_author = "";
             foreach (string a in authors)
             {
                 if (a.Length > 0 && new_author != "")
-                    new_author = new_author + ";" + a.Trim();
+                    new_author = new_author + ";" + TrimEntry(a);
                 else if (a.Length > 0)
-                    new_author = a.Trim();
+                    new_author = TrimEntry(a);
             }
 
-            if (editor ==null)
+            if (editor == null)
                 editor = new_author;
             if (new_author == "")
-                new_author = editor;            
+                new_author = editor;
 
             string booktitle = entry.getField("booktitle");
             string edition = entry.getField("edition");
@@ -232,7 +250,7 @@ namespace BibTex2eCitation
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(" eCitation Editor Version " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version + " \n Developed at the Chair of Systems Design, 2013\n http://www.sg.ethz.ch", "About eCitation Editor");
+            MessageBox.Show(" eCitation Editor Version " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version + " \n Developed at the Chair of Systems Design, 2013-2014\n http://www.sg.ethz.ch", "About eCitation Editor");
         }
     }
 }

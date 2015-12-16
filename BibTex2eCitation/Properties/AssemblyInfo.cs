@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("eCitationEditor")]
 [assembly: AssemblyDescription("A simple editor for ETH eCitation CSV Files, with an option to import BibTeX")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Ingo Scholtes, Chair of Systems Design, ETH Zurich")]
+[assembly: AssemblyCompany("Chair of Systems Design, ETH Zurich")]
 [assembly: AssemblyProduct("eCitationEditor")]
-[assembly: AssemblyCopyright("Copyright ©  2013-2015")]
+[assembly: AssemblyCopyright("Copyright ©  2013-2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.3.0.0")]
-[assembly: AssemblyFileVersion("1.3.0.0")]
+[assembly: AssemblyVersion("1.2.0.0")]
+[assembly: AssemblyFileVersion("1.2.0.0")]
