@@ -174,14 +174,14 @@ namespace BibTex2eCitation
 
         private void openECitationCSVToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = "CSV Files|*.txt";
+            openFileDialog1.Filter = "CSV Files|*.txt;*.csv";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string[] data = System.IO.File.ReadAllLines(openFileDialog1.FileName);
                 foreach (string row in data)
                 {
                     if(row != data[0] && row.Length>0)
-                        dataGridView1.Rows.Add(row.Split('\t'));
+                        dataGridView1.Rows.Add(row.Split(','));
                 }                
             }
         }
